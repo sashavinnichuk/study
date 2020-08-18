@@ -3,15 +3,16 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block meta_title %}{% trans "Delete Student" %}{% endblock meta_title %}
+{% block meta_title %}{% trans "Delete Group" %}{% endblock meta_title %}
 
-{% block title %}{% trans "Delete Student" %}{% endblock title %}
+{% block title %}{% trans "Delete Group" %}{% endblock title %}
 {% block content %}
 
-<form action="{% url 'students_delete' object.id %}" method="post">
+<form action="{% url 'groups_delete' object.id %}" method="post">
     {% csrf_token %}
-    <p>% blocktrans %}Do you really want to delete student: "{{ object }}"?{% endblocktrans %}</p>
-    <input type="submit" value="{% trans 'Yes' %}" name="delete_button" class="btn btn-danger" /><br /><br />
+    <p>{% blocktrans %}Do you really want to delete group: "{{ object }}"?{% endblocktrans %}</p>
+    <input type="submit" value="{% trans 'Yes' %}" name="delete_button" class="btn btn-danger" />
+    <input type="submit" value="{% trans 'No' %}" name="cancel_button" class="btn btn-danger" /><br /><br />
 </form>
 
 {% endblock content %}

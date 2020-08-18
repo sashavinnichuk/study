@@ -17,10 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 
+js_info_dict = {
+    'packages': ('students',),
+}
+
 urlpatterns = [
     # Students urls
     url(r'^', include('students.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
 ]
 
 if DEBUG:

@@ -1,0 +1,22 @@
+INFO 2019-02-01 10:37:42,222 signals: Student added: Alex Gogon(ID: 10)
+INFO 2019-02-01 10:38:23,155 signals: Student deleted: Alex Gogon (ID: 10)
+ERROR 2019-02-01 10:47:18,889 contact_admin_view: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/data/work/virtualenvs/studentsdb/src/studentsdb/students/views/contact_admin_view.py", line 55, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/__init__.py", line 62, in send_mail
+    return mail.send()
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/message.py", line 303, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials r4sm1310463lfe.60 - gsmtp')
+INFO 2019-02-01 11:37:25,378 signals: Student updated: Oleg Podoba(ID: 1)
+INFO 2019-02-08 12:56:26,153 signals: Student deleted: Oleg Podoba (ID: 1)
+INFO 2019-02-08 12:56:37,371 signals: Student deleted: Vitaliy Podoba (ID: 3)
+INFO 2019-02-08 12:58:36,034 signals: Student deleted: Artem Barash (ID: 4)
+INFO 2019-02-08 12:59:47,551 signals: Student deleted: Oleksandr Dobriy (ID: 5)
